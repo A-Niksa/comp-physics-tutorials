@@ -1,0 +1,2 @@
+Numerical Method: https://math.stackexchange.com/questions/721076/help-with-using-the-runge-kutta-4th-order-method-on-a-system-of-2-first-order-od
+Physics: http://ilinblog.ru/article.php?id_article=58
