@@ -2,14 +2,6 @@ clear all
 close all
 clc
 
-%% Importing Experimental Data
-filename = 'Data.xlsx';
-sheet = 1;
-
-exp_t = xlsread(filename,sheet,'A3:A2972');
-exp_x = xlsread(filename,sheet,'B3:B2972');
-exp_y = zeros(length(exp_x),1);
-
 %% Definition of Parameters
 % parameters
 g = 9.81; % m/s^2 | gravitational acceleration of the Earth
@@ -28,41 +20,7 @@ x(1) = 0.1; % m | initial position | x(0)
 x = x0+sqrt((x(1)-x0)^2+(v0/(2*pi*f))^2).*cos(2*pi*f.*t+t_start); % m | x as a function of time
 y = zeros(1,length(x)); % m | y as a function of time
 
-%% Visualisation
-% Figure 1
-fig1 = figure('PaperUnits','normalized','PaperPosition',[0 0 0.6 0.28],'Visible','off');
-subplot(2,1,1)
-plot(exp_t,exp_x+0.4,'Color',[0 .4 .6],'LineWidth',.95)
-xlabel('t (s)','FontName','Helvetica','FontSize',9,'FontWeight','bold')
-ylabel('x (m)','FontName','Helvetica','FontSize',9,'FontWeight','bold')
-% legend('Experiments','FontName','Helvetica','FontSize',9)
-title('Experiments','FontName','Helvetica','FontSize',9)
-grid on
-
-subplot(2,1,2)
-plot(t,x,'Color',[0 .6 .6],'LineWidth',.95)
-xlabel('t (s)','FontName','Helvetica','FontSize',9,'FontWeight','bold')
-ylabel('x (m)','FontName','Helvetica','FontSize',9,'FontWeight','bold')
-% legend('Simulation','FontName','Helvetica','FontSize',9)
-title('Simulation','FontName','Helvetica','FontSize',9)
-grid on
-
-print('Fig1.png','-dpng','-r500',fig1);
-
-
-% Figure 2
-fig2 = figure('PaperUnits','normalized','PaperPosition',[0 0 0.6 0.1],'Visible','off');
-plot(exp_t,exp_x+0.4,'Color',[0 .4 .6],'LineWidth',.95)
-hold on
-plot(t,x,'Color',[0 .6 .6],'LineWidth',.95)
-xlabel('t (s)','FontName','Helvetica','FontSize',9,'FontWeight','bold')
-ylabel('x (m)','FontName','Helvetica','FontSize',9,'FontWeight','bold')
-legend('Experiments','Simulation','Fontname','Helvetica','FontSize',9)
-grid on
-
-print('Fig2.png','-dpng','-r500',fig2);
-
-% Animation 1
+%% Animation
 outerlength = 0.19; % m | the length of the rod outside each of the centers of the cylinders
 r = 0.05; % m | radius of the cylinders
 
@@ -80,7 +38,7 @@ rod = plot([x(1)-d/2-outerlength x(1)+d/2+outerlength],[y(1) y(1)],...
     'LineWidth',1.5,'Color',[0 0 .6]);
 hold on
 rectangle('Position',[-d/2-r -r r r],'Curvature',[1 1],'FaceColor',[0 .6 .6],'EdgeColor',[0 .6 .6])
-rectangle('Position',[d/2+r -r r r],'Curvature',[1 1],'FaceColor',[0 .6 .6],'EdgeColor',[0 .6 .6])
+rectangle('Position',[d/2 -r r r],'Curvature',[1 1],'FaceColor',[0 .6 .6],'EdgeColor',[0 .6 .6])
 xlabel('x (m)','FontName','Helvetica','FontSize',9,'FontWeight','bold')
 ylabel('y (m)','FontName','Helvetica','FontSize',9,'FontWeight','bold')
 axis equal
