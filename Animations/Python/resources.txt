@@ -1,0 +1,1 @@
+https://towardsdatascience.com/how-to-animate-plots-in-python-2512327c8263
