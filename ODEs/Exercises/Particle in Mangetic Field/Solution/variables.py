@@ -1,0 +1,10 @@
+e = 1.6E-19
+m = 1.67E-23
+vxInitial = 5.65
+vyInitial = 5.65
+magneticFieldMagnitude = 1.5E-4
+omega = e * magneticFieldMagnitude / m
+tEnd = 10 # ending time of the simulation
+h = 0.05 # time increment
+n = int(tEnd / h) + 1
+differentialEqCoefficient = h * omega
