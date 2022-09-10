@@ -1,0 +1,3 @@
+tutorial: https://www.youtube.com/watch?v=cMJwqxskyek
+repo of tutorial: https://github.com/CreepyD246/Simple-Color-Detection-with-Python-OpenCV/blob/main/color_detection.py
+video: https://www.dreamstime.com/stock-video-massage-ball-bouncing-black-surface-slow-motion-video40111504
