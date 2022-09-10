@@ -1,0 +1,8 @@
+ELECTRIC FIELD AND ELECTRIC POTENTIAL:
+POISSON’S and LAPLACES’S EQUATIONS
+Ian Cooper
+University of Sydney
+
+https://www.cantorsparadise.com/relaxation-methods-da12011bb530
+
+https://matplotlib.org/stable/gallery/mplot3d/surface3d.html
