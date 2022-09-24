@@ -63,8 +63,8 @@ gif_writer = animation.PillowWriter(fps = frames_per_second)
 file_name = "result.gif"
 
 # ---------------------------- creating animation ---------------------------- #
-fig, (ax1, ax2) = plt.subplots(2, 1, figsize = (5, 6), gridspec_kw={'height_ratios': [2, 1]})
+fig, (ax1, ax2) = plt.subplots(2, 1, figsize = (4, 5), gridspec_kw={'height_ratios': [2, 1]})
 animated_plot = animation.FuncAnimation(fig, animate, interval = interval_between_frames, frames = n)
 
 # ----------------------------- saving animation ----------------------------- #
-animated_plot.save(file_name, writer = gif_writer, dpi = 300)
+animated_plot.save(file_name, writer = gif_writer, dpi = 250)
