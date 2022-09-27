@@ -31,7 +31,7 @@ def solve(interval_start, interval_end, root_error, equation_function):
         current_error = abs(value_at_middle)
 
         number_of_iterations += 1
-        if number_of_iterations >= cfg.max_number_of_iterations:
+        if number_of_iterations > cfg.max_number_of_iterations:
             break
 
     return interval_middle
